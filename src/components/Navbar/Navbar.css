@@ -1,0 +1,46 @@
+.navbar {
+  background-color: rgb(255, 249, 182);
+}
+
+.web-title {
+  font-weight: 700;
+}
+
+.web-title:hover {
+  font-weight: 800;
+}
+
+.web-title span {
+  color: rgba(63, 63, 63, 1);
+}
+
+.burgerbar-header {
+  background-color: rgb(255, 249, 182);
+}
+
+.burgerbar-body {
+  background-color: rgba(216, 255, 198, 1);
+}
+
+.navlink {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.navlink .links:hover {
+  font-weight: bold;
+}
+
+/* .web-title:hover {
+  font-weight: bolder;
+} */
+
+/* .web-title span {
+  color: rgba(63, 63, 63, 1);
+} */
+
+/* .navlink {
+  font-size: 20px;
+}
+
+} */

@@ -1,63 +1,41 @@
-const Navbar = () => {
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import './Navbar.css'
+
+function OffcanvasExample() {
+  const expand = false;
   return (
-    <nav className="navbar navbar-dark bg-dark fixed-top">
-      <div className="container-fluid">
-        <a className="navbar-brand fw-bold d-flex " href="/">
-          <p className="text-warning">DIGI</p>
-          <span className="text-success">
-          MONEY
-          </span>
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasDarkNavbar"
-          aria-controls="offcanvasDarkNavbar"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div
-          className="offcanvas offcanvas-end text-bg-dark"
-          tabIndex="-1"
-          id="offcanvasDarkNavbar"
-          aria-labelledby="offcanvasDarkNavbarLabel"
-        >
-          <div className="offcanvas-header">
-            <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
-              DIGI<span>MONEY</span>
-            </h5>
-            <button
-              type="button"
-              className="btn-close btn-close-white"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
+    <>
+        <Navbar key={expand} expand={expand} className="navbar">
+          <Container fluid>
+            <Navbar.Brand href="#" className='web-title text-success'>DIGI
+              <span>MONEY</span></Navbar.Brand>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-${expand}`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+              placement="end"
+              className="burgerbar"
             >
-            </button>
-          </div>
-          <div className="offcanvas-body">
-            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Log In
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Sign Up
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
-  )
-}
-export default Navbar;
+              <Offcanvas.Header closeButton className="burgerbar-header">
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`} className='web-title text-success'>
+                  DIGI<span>MONEY</span>
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body className='burgerbar-body'>
+                <Nav className="navlink justify-content-end flex-grow-1 pe-3">
+                  <Nav.Link href="#" className='links'>Home</Nav.Link>
+                  <Nav.Link href="#" className='links'>Log In</Nav.Link>
+                  <Nav.Link href="#" className='links'>Sign Up</Nav.Link>
+                </Nav>
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+    </>
+  );
+};
+
+export default OffcanvasExample;
